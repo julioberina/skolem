@@ -15,7 +15,7 @@
 	  value (atom 0)
     	  result (atom initnums)]
       (while (< @n seqlen)
-        (dotimes [i (count initnums)]
+        (dotimes [i (- (count initnums) (dec param_k))]
           (swap! value + (get @result (- @n @k)))
 	  (swap! k inc))
         (swap! result conj @value)
@@ -35,7 +35,7 @@
 	  value (atom 0)
 	  result (atom initnums)]
       (while (< @n seqlen)
-        (dotimes [i (count initnums)]
+        (dotimes [i (- (count initnums) (dec param_k))]
 	  (swap! value + (* (get @result (- @n @k)) (get coefficients i)))
 	  (swap! k inc))
 	(swap! result conj @value)
