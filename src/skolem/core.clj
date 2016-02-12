@@ -3,7 +3,7 @@
 
 (defn next-term [terms k coefficients]
   (apply + (map (fn [x] (eval (conj x '*)))
-  (partition 2 (interleave (nthrest terms (dec k)) coefficients)))))
+  (partition 2 (interleave (nthrest (reverse terms) (dec k)) coefficients)))))
 
 (defn shift-terms [terms num] (conj (vec (rest terms)) num))
 
