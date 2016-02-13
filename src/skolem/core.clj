@@ -7,12 +7,10 @@
 
 (defn shift-terms [terms num] (conj (vec (rest terms)) num))
 
-(defn error [] (println "Program exited due to error in input"))
-
 (defn lrr [terms k & coefficients]
   "Generates a linear recurrence relation using initial terms, k, and optional coefficients.\n
   Equation format: a_n = c_0*a_(n-k) + c_1*a_(n-(k+1)) + ... + c_(n-1)*a_0\n"
-  (let [a_n (if (empty? coefficients)
+  (let [a_n (if (empty? (first coefficients))
        	    (next-term terms k (take (count terms) (repeat 1)))
 	    (next-term terms k (take (count terms) (first coefficients))))]
     (if (empty? coefficients)
@@ -20,7 +18,7 @@
       (lazy-seq (cons (first terms) (lrr (shift-terms terms a_n) k (first coefficients)))))))
 
 (defn skolemization [sequence]
-  "Finds the index of the zero in the linear recurrence relation"
+  "Finds the index of the zeroes in the linear recurrence relation"
   (loop [result [] it 0]
     (if (>= it (count sequence)) result
       (if (zero? (nth sequence it))
@@ -30,28 +28,44 @@
 (defn -main [& args]
   (print "The Skolem Problem Program\n\n")
   (print "Equation format: a_n = c_0*a_(n-k) + c_1*a_(n-(k+1)) + ... + c_(n-1)*a_0\n\n")
-  (let [attr (atom {:terms [] :k 0 :coefficients '()})]
-    (print "Enter initial values: ") (flush)
-    (swap! attr assoc :terms (vec (map #(read-string %) (re-seq #"\S+" (clojure.string/replace (read-line) "," "")))))
-    (print "Enter k: ") (flush)
-    (swap! attr assoc :k (read-string (read-line)))
-    (print "Are all coefficients 1? (y/n): ") (flush)
-    (cond
-      (or (= (read-line) "y") (= (read-line) "Y"))
-      (do (print "How many terms would you like? ") (flush)
-      (let [number (read-string (read-line))]
-        (print "\nSequence: ") (doseq [i (take number (lrr (:terms @attr) (:k @attr)))] (print i)) (print "\n")
-	(print "Zeroes: ") (doseq [i (skolemization (take number (lrr (:terms @attr) (:k @attr))))] (print i " ")) (print "\n\n"))
-      (print "Would you like to redo? ") (flush)
-      (if (or (= (read-line) "y") (= (read-line) "Y")) (do (print "\n\n\n") (-main))
-      (print "\n"))) 
-      (or (= (read-line) "n") (= (read-line) "N"))
-      (do (print "Write out coefficients in order: ") (*flush-on-newline*)
-      (swap! attr assoc :coefficients (map #(read-string %) (re-seq #"\S+" (clojure.string/replace (read-line) "," ""))))
-      (print "How many terms would you like? ") (flush)
-      (let [number (read-string (read-line))]
-        (print "\nSequence: ") (doseq [i (take number (lrr (:terms @attr) (:k @attr) (:coefficients @attr)))] (print i))
-	(print "\nZeroes: ") (doseq [i (skolemization (take number (lrr (:terms @attr) (:k @attr) (:coefficients @attr))))] (print i " ")) (print "\n\n"))
-      (print "Would you like to redo? ") (flush)
-      (if (or (= (read-line) "y") (= (read-line) "Y")) (do (print "\n\n\n") (-main))
-      (print "\n"))))))
+  (let [params (atom []) running (atom true)]
+    (while @running
+      (print "Enter initial terms: ")(flush)
+      (let [input (read-line)]
+        (swap! params conj
+	  (->> (clojure.string/replace input "," " ")
+	       (re-seq #"\S+")
+	       (map #(read-string %))
+	       vec)))
+      (print "Enter k: ")(flush)
+      (let [input (read-line)] (swap! params conj (read-string input)))
+      (print "Are all coefficients 1? (y/n): ")(flush)
+      (let [input (.toUpperCase (read-line))]
+        (case input
+	  "Y" (swap! params conj '())
+	  "N"
+	  (do (print "Enter coefficients in order: ") (flush)
+	  (let [otherinput (read-line)]
+	    (swap! params conj
+	      (->> (clojure.string/replace otherinput "," " ")
+	      	   (re-seq #"\S+")
+		   (map #(read-string %))))))
+          (reset! running false)))
+      (print "How many terms would you like? ")(flush)
+      (let [input (read-string (read-line))
+      	    sequence (take input (lrr (get @params 0) (get @params 1) (get @params 2)))
+	    skolem-seq (skolemization sequence)]
+        (newline)
+	(print "Sequence: ")
+	(doseq [i sequence] (if (not= i (last sequence)) (print (str i ", ")) (print i)))
+	(newline)
+	(print "Zeroes: ")
+	(doseq [i skolem-seq] (if (not= i (last skolem-seq))
+	(print (str "a_" i ", ")) (print (str "a_" i))))
+	(newline)(newline))
+      (print "You wanna run it again? (y/n): ")(flush)
+      (let [input (.toUpperCase (read-line))]
+        (case input
+	  "Y" (do (reset! params []) (newline))
+	  "N" (reset! running false)
+	  (reset! running false))))))
