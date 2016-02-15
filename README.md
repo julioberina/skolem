@@ -46,7 +46,7 @@ Sample program run:
 
 Fibonacci Sequence
 
-Enter initial terms: 1, 1
+Enter initial terms: 1, 1 <br />
 Enter k: 1
 Are all coefficients 1? (y/n): y
 How many terms would you like? 10
