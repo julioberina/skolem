@@ -44,7 +44,7 @@ FIXME: explanation
 ## Examples
 ####Sample program run:
 
-######Fibonacci Sequence <br />
+#####Fibonacci Sequence
 Enter initial terms: 1, 1 <br />
 Enter k: 1 <br />
 Are all coefficients 1? (y/n): y <br />
@@ -55,7 +55,7 @@ Zeroes:
 
 You wanna run it again? (y/n): y
 
-######Pell Numbers <br/ >
+#####Pell Numbers
 Enter initial terms: 0, 1 <br />
 Enter k: 1 <br />
 Are all coefficients 1? (y/n): n <br />
@@ -67,7 +67,7 @@ Zeroes: a_0
 
 You wanna run it again? (y/n): y
 
-######Perrin Sequence <br />
+#####Perrin Sequence
 Enter initial terms: 3, 0, 2<br />
 Enter k: 2<br />
 Are all coefficients 1? (y/n): y <br />
@@ -78,7 +78,7 @@ Zeroes: a_1
 
 You wanna run it again? (y/n): y
 
-######My own random sequence <br />
+#####My own random sequence
 Enter initial terms: 0, 0, -1, 0, 1 <br />
 Enter k: 1 <br />
 Are all coefficients 1? (y/n): n <br />
