@@ -21,8 +21,7 @@ Download from http://example.com/FIXME.
 
 ## Usage
 
-FIXME: explanation
-
+FIXME: explanation <br />
     Before using this program, I assume the following:
     - You have an installation of Java on your machine
     - It's location is on your PATH.
