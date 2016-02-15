@@ -44,52 +44,48 @@ FIXME: explanation
 ## Examples
 Sample program run:
 
-Fibonacci Sequence
-
+Fibonacci Sequence <br />
 Enter initial terms: 1, 1 <br />
-Enter k: 1
-Are all coefficients 1? (y/n): y
+Enter k: 1 <br />
+Are all coefficients 1? (y/n): y <br />
 How many terms would you like? 10
 
-Sequence: 1, 1, 2, 3, 5, 8, 13, 21, 34, 55
+Sequence: 1, 1, 2, 3, 5, 8, 13, 21, 34, 55<br />
 Zeroes: 
 
 You wanna run it again? (y/n): y
 
-Pell Numbers
-
-Enter initial terms: 0, 1
-Enter k: 1
-Are all coefficients 1? (y/n): n
-Enter coefficients in order: 2, 1
+Pell Numbers <br/ >
+Enter initial terms: 0, 1 <br />
+Enter k: 1 <br />
+Are all coefficients 1? (y/n): n <br />
+Enter coefficients in order: 2, 1 <br />
 How many terms would you like? 10
 
-Sequence: 0, 1, 2, 5, 12, 29, 70, 169, 408, 985
+Sequence: 0, 1, 2, 5, 12, 29, 70, 169, 408, 985<br />
 Zeroes: a_0
 
 You wanna run it again? (y/n): y
 
-Perrin Sequence
-
-Enter initial terms: 3, 0, 2
-Enter k: 2
-Are all coefficients 1? (y/n): y
+Perrin Sequence <br />
+Enter initial terms: 3, 0, 2<br />
+Enter k: 2<br />
+Are all coefficients 1? (y/n): y <br />
 How many terms would you like? 15
 
-Sequence: 3, 0, 2, 3, 2, 5, 5, 7, 10, 12, 17, 22, 29, 39, 51
+Sequence: 3, 0, 2, 3, 2, 5, 5, 7, 10, 12, 17, 22, 29, 39, 51 <br />
 Zeroes: a_1
 
 You wanna run it again? (y/n): y
 
-My own random sequence
-
-Enter initial terms: 0, 0, -1, 0, 1
-Enter k: 1
-Are all coefficients 1? (y/n): n
-Enter coefficients in order: 3, -3
+My own random sequence <br />
+Enter initial terms: 0, 0, -1, 0, 1 <br />
+Enter k: 1 <br />
+Are all coefficients 1? (y/n): n <br />
+Enter coefficients in order: 3, -3<br />
 How many terms would you like? 20
 
-Sequence: 0, 0, -1, 0, 1, 3, 6, 9, 9, 0, -27, 81, -162, -243, -243, 0, 729, 2187, 4374, 6561
+Sequence: 0, 0, -1, 0, 1, 3, 6, 9, 9, 0, -27, 81, -162, -243, -243, 0, 729, 2187, 4374, 6561<br />
 Zeroes: a_0, a_1, a_3, a_9, a_15
 
 You wanna run it again? (y/n): n
