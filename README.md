@@ -45,6 +45,7 @@ FIXME: explanation
 Sample program run:
 
 Fibonacci Sequence
+
 Enter initial terms: 1, 1
 Enter k: 1
 Are all coefficients 1? (y/n): y
@@ -56,6 +57,7 @@ Zeroes:
 You wanna run it again? (y/n): y
 
 Pell Numbers
+
 Enter initial terms: 0, 1
 Enter k: 1
 Are all coefficients 1? (y/n): n
@@ -68,6 +70,7 @@ Zeroes: a_0
 You wanna run it again? (y/n): y
 
 Perrin Sequence
+
 Enter initial terms: 3, 0, 2
 Enter k: 2
 Are all coefficients 1? (y/n): y
@@ -79,6 +82,7 @@ Zeroes: a_1
 You wanna run it again? (y/n): y
 
 My own random sequence
+
 Enter initial terms: 0, 0, -1, 0, 1
 Enter k: 1
 Are all coefficients 1? (y/n): n
