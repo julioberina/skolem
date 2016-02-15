@@ -6,6 +6,7 @@ FIXME: My attempt to solve the Skolem Problem using Clojure, a Lisp dialect that
 The Skolem problem is a problem in computer science that has been open since the 60s. It asks the
 question:
 > Given any linear recurrence relation (with certain initial conditions), does it contain a zero?
+
 When I created the program, I wrote a few functions to generate a linear recurrence relation and find the zeroes in that sequence.
 The two important functions of the program are:
 - lrr: Generates a linear recurrence relation given certain initial conditions
