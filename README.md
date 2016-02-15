@@ -44,7 +44,7 @@ FIXME: explanation
 ## Examples
 ####Sample program run:
 
-#####Fibonacci Sequence
+#####Fibonacci Sequence: a_n = a_n-1 + a_n-2, a_0 = 1, a_1 = 1
 Enter initial terms: 1, 1 <br />
 Enter k: 1 <br />
 Are all coefficients 1? (y/n): y <br />
@@ -55,7 +55,7 @@ Zeroes:
 
 You wanna run it again? (y/n): y
 
-#####Pell Numbers
+#####Pell Numbers: a_n = 2*a_n-1 + a_n-2, a_0 = 0, a_1 = 1
 Enter initial terms: 0, 1 <br />
 Enter k: 1 <br />
 Are all coefficients 1? (y/n): n <br />
@@ -67,7 +67,7 @@ Zeroes: a_0
 
 You wanna run it again? (y/n): y
 
-#####Perrin Sequence
+#####Perrin Sequence: a_n = a_n-2 + a_n-3, a_0 = 3, a_1 = 0, a_2 = 2
 Enter initial terms: 3, 0, 2<br />
 Enter k: 2<br />
 Are all coefficients 1? (y/n): y <br />
@@ -78,7 +78,7 @@ Zeroes: a_1
 
 You wanna run it again? (y/n): y
 
-#####My own random sequence
+#####My own random sequence: a_n = 3*a_n-1 - 3*a_n-2, a_0 = a_1 = 0, a_2 = -1, a_3 = 0, a_4 = 1
 Enter initial terms: 0, 0, -1, 0, 1 <br />
 Enter k: 1 <br />
 Are all coefficients 1? (y/n): n <br />
