@@ -42,7 +42,7 @@ FIXME: explanation
     Then it will prompt you to state if you would like to run the program again.
 
 ## Examples
-Sample program run:
+####Sample program run:
 
 Fibonacci Sequence <br />
 Enter initial terms: 1, 1 <br />
